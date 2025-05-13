@@ -59,7 +59,7 @@ const HomeUser = () => {
                 <Link className='wrap' to='/contact-list'>
                   
                   <p>
-                    <span><RiContactsFill style={{ fontSize: '1.7em' }} /></span>
+                    <span><RiContactsFill style={{ fontSize: '2.5em' }} /></span>
                     <span>Contactos</span>
                     
                   </p>
@@ -72,7 +72,7 @@ const HomeUser = () => {
               <Link className='wrap' to='/location-view'>
               <p>
                     <span>
-                <FaLocationDot style={{ fontSize: '1.7em' }} />
+                <FaLocationDot style={{ fontSize: '2.5em' }} />
                 </span>
                     <span>Lugares</span>
                     
@@ -82,7 +82,7 @@ const HomeUser = () => {
             )}
             {/* {token && (
                 <Link className='login-buttones' to='/help'>
-                  <FaQuestionCircle style={{ fontSize: '1.7em' }} />
+                  <FaQuestionCircle style={{ fontSize: '2.5em' }} />
                   <p>FAQ</p>
                 </Link>
               )} */}
@@ -92,7 +92,7 @@ const HomeUser = () => {
               <Link className='wrap' to='/freq-asked-questions'>
               <p>
                     <span>
-                <MdTipsAndUpdates style={{ fontSize: '1.7em' }} />
+                <MdTipsAndUpdates style={{ fontSize: '2.5em' }} />
                 </span>
                     <span>Entérate</span>
                     
@@ -107,7 +107,7 @@ const HomeUser = () => {
               <Link className='wrap' to='/chatbot'>
               <p>
                     <span>
-                <TbMessageChatbotFilled style={{ fontSize: '1.7em' }} />
+                <TbMessageChatbotFilled style={{ fontSize: '2.5em' }} />
                 </span>
                     <span>Chatbot</span>
                     
@@ -121,7 +121,7 @@ const HomeUser = () => {
               <Link className='wrap' to='/complaint'>
               <p>
                     <span>
-                <BsChatSquareTextFill style={{ fontSize: '1.7em' }} />
+                <BsChatSquareTextFill style={{ fontSize: '2.5em' }} />
                 </span>
                     <span>Denuncia</span>
                     
@@ -135,7 +135,7 @@ const HomeUser = () => {
               <Link className='wrap' to='/adopt'>
               <p>
                     <span>
-                <PiPawPrintFill style={{ fontSize: '1.7em' }} />
+                <PiPawPrintFill style={{ fontSize: '2.5em' }} />
                 </span>
                     <span>Adopta</span>
                     

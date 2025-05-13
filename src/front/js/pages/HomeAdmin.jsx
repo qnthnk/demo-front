@@ -56,7 +56,7 @@ const HomeAdmin = () => {
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/admin-console'>
                   <p>
-                    <span><MdOutlineDashboardCustomize style={{ fontSize: '1.7em' }} /></span>
+                    <span><MdOutlineDashboardCustomize style={{ fontSize: '2.5em' }} /></span>
                     <span>Consola</span>
                   </p>
                 </Link>
@@ -66,7 +66,7 @@ const HomeAdmin = () => {
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/mapine'>
                   <p>
-                    <span><LiaMapSolid style={{ fontSize: '1.7em' }} /></span>
+                    <span><LiaMapSolid style={{ fontSize: '2.5em' }} /></span>
                     <span> Mapas</span>
                   </p>
                 </Link>
@@ -76,7 +76,7 @@ const HomeAdmin = () => {
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/stats-and-reports'>
                   <p>
-                    <span><FaChartPie style={{ fontSize: '1.7em' }} /></span>
+                    <span><FaChartPie style={{ fontSize: '2.5em' }} /></span>
                     <span> Estadística</span>
                   </p>
                 </Link>
@@ -87,7 +87,7 @@ const HomeAdmin = () => {
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/chatbot'>
                   <p>
-                    <span><TbMessageChatbotFilled style={{ fontSize: '1.7em' }} /></span>
+                    <span><TbMessageChatbotFilled style={{ fontSize: '2.5em' }} /></span>
                     <span> Chatbot</span>
                   </p>
                 </Link>
@@ -97,7 +97,7 @@ const HomeAdmin = () => {
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/expediente'>
                   <p>
-                    <span><FaAddressCard style={{ fontSize: '1.7em' }} /></span>
+                    <span><FaAddressCard style={{ fontSize: '2.5em' }} /></span>
                     <span> Expediente</span>
                   </p>
                 </Link>
@@ -107,7 +107,7 @@ const HomeAdmin = () => {
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/blog'>
                   <p>
-                    <span><TbReportSearch style={{ fontSize: '1.7em' }} /></span>
+                    <span><TbReportSearch style={{ fontSize: '2.5em' }} /></span>
                     <span>Reportes</span>
                   </p>
                 </Link>

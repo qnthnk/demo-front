@@ -70,7 +70,7 @@ const Login = () => {
           <div style={{ position: 'relative', width: '80%', maxWidth: '800px' }}>
             <iframe
               width="100%"
-              height="450"
+              height="350"
               src="https://www.youtube.com/embed/KrTuzouf-44?autoplay=1"
               title="YouTube video player"
               allow="autoplay; encrypted-media"
@@ -85,16 +85,20 @@ const Login = () => {
                 background: 'red',
                 color: 'white',
                 border: 'none',
-                padding: '10px 15px',
                 cursor: 'pointer',
-                borderRadius: '5px'
+                borderRadius: '5px',
+                height: '20px',
+                width: '40px',
+                fontSize: '10px',
               }}
             >
-              X
+              Cerrar
             </button>
           </div>
         </div>
       )}
+
+      
 
       <div>
         <form className="form" onSubmit={handleSubmit} style={{ textAlign: 'center', marginTop: '12%' }}>
