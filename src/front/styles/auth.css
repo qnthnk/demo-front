@@ -16,7 +16,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Patria';
+    src: url("https://framework-gb.cdn.gob.mx/applications/cms/fonts/Patria_Regular.otf") format("opentype");
+
 }
 /* Contenedor principal */
 .auth-container {

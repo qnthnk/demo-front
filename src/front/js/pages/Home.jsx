@@ -5,10 +5,17 @@ import './../../styles/home.css';
 import HomeUser from './HomeUser.jsx';
 import HomeAdmin from './HomeAdmin.jsx';
 import { FaInfo } from "react-icons/fa";
+import fondo from '../../img/cartilla.png'; // Ajusta el path
 
 const Home = () => {
   const token = localStorage.getItem('token');
   const { actions } = useContext(Context);
+    const estiloFondo = {
+      backgroundImage: `url(${fondo})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '100vh'
+    };
 
   const [location, setLocation] = useState(null);
   const [error, setError] = useState(null);
@@ -42,7 +49,7 @@ const Home = () => {
     <>
       {token ? (
         <div
-          className='containerRMC'
+          className='containerRMC' style={estiloFondo}
         >
           <div className='containerH'>
            

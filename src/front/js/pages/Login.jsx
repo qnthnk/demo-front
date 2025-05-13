@@ -2,8 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Context } from '../store/appContext';
 import { useNavigate, Link } from 'react-router-dom';
 import './../../styles/Login.css';
-import LOGO from '../../img/garciaback.png'
-import { FaInfo } from "react-icons/fa";
+import fondo from '../../img/tejedoras.webp'; // Ajusta el path
 
 
 const Login = () => {
@@ -35,7 +34,7 @@ const Login = () => {
       const response = await actions.login({ email, password });
 
       if (response?.token) {
-      //   if (setToken) setToken(response.token);
+        //   if (setToken) setToken(response.token);
 
         // Redirigir basado en el rol del usuario
         const redirectPath = store.user.role === 'admin' ? '/admin-dashboard' : '/home';
@@ -52,65 +51,58 @@ const Login = () => {
       setError(error.message || 'Ocurrió un error al iniciar sesión. Inténtalo de nuevo.');
     }
   };
+  const estiloFondo = {
+    backgroundImage: `url(${fondo})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: '100vh'
+  };
 
   return (
+    <div className="containernn2" style={estiloFondo}>
+      <br />
+      <br />
+      <br />
 
-    <div className='containerRMC'>
-      <div className='containerH'>
-        
+              <form className="form" onSubmit={handleSubmit}>
+                <input
+                  placeholder="Correo electrónico"
+                  id="email"
+                  name="email"
+                  type="email"
+                  className="inputlog"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <input
+                  placeholder="Contraseña"
+                  id="password"
+                  name="password"
+                  type="password"
+                  className="inputlog"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <div className="loginNew" style={{ marginTop: "-20px" }}>
+                  <button value="Iniciar sesión" type="submit" >Ingresar</button>
 
-       
-        <div className="main">
-        <div className="mainInner">
-          
+                </div>
+  
+                <br />
+                <br />
+                <div>
+                <span >
+                    <Link style={{color:"rgb(130, 23, 156)"}} className='forgot-password' to="/forgot-password">Olvidé mi contraseña</Link>
+                  </span>
+                  <span >
+                    <Link  className='forgot-password' style={{ fontSize: 'x-large',color:"rgb(130, 23, 156)" }} to="/signup">Regístrate</Link>
+                  </span>
 
-        <div className="login">
-          <div className="heading" style={{color:"white", marginTop:"20px"}}>Escudo</div>
-          <form className="form" onSubmit={handleSubmit}>
-            <input
-              placeholder="Correo electrónico"
-              id="email"
-              name="email"
-              type="email"
-              className="inputlog"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              placeholder="Contraseña"
-              id="password"
-              name="password"
-              type="password"
-              className="inputlog"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <div className="loginNew" style={{marginTop: "-20px"}}>
-              <button value="Iniciar sesión" type="submit" >Ingresar</button>
-            <span >
-              <Link className='forgot-password' to="/forgot-password">Olvidé mi contraseña</Link>
-            </span>
-            <span >
-              <Link className='forgot-password' style={{fontSize:'x-large'}} to="/signup">Regístrate</Link>
-            </span>
-
-            </div>
-            </form>
-            </div>
-            </div>
-          <div className="register">
-            <form className="form">
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <img src={LOGO} className='logo' />
-        </div>
-         
-            </form>
-            </div>
-        </div>
-      </div>
-    </div>
+                </div>
+              </form>
+          </div>
   );
 };
 

@@ -42,7 +42,7 @@ const faqs = [
   { question: "Programas de Gobierno", answer: "Programas y requisitos." },
   { 
     question: "Links", 
-    answer: <a href="https://garcia.gob.mx/" target="_blank" rel="noopener noreferrer">https://garcia.gob.mx/</a> 
+    answer: <a href="https://www.gob.mx/mujeres" target="_blank" rel="noopener noreferrer">https://www.gob.mx/mujeres</a> 
   },
   { question: "Novedades", answer: "Servicios que actualmente están disponibles como albercas o pistas de hielo." },
   { question: "Otros", answer: <>Puedes consultar nuestro <Link to="/chatbot">Chatbot</Link>.</> },

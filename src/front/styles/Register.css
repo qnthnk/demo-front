@@ -180,7 +180,8 @@
 	display: grid;
 	place-items: center;
 	/* Centers content both horizontally and vertically */
-    font-family: 'Roboto', sans-serif;
+	font-family: 'Patria';
+    src: url("https://framework-gb.cdn.gob.mx/applications/cms/fonts/Patria_Regular.otf") format("opentype");
     margin-top: 70px; /* Adjust the value as needed for the navbar */
     margin-bottom: 20px; /* Adjust the value as needed for the footer */
 }

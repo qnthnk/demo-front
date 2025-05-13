@@ -3,7 +3,9 @@
 	min-height: calc(100vh - 100px);
 	/* Adjust 100px according to the height of your navbar and footer */
 	place-content: center;
-	margin-top: 10%;
+	background-image: url("./../img/tejedoras.webp");
+	background-size: cover;
+	background-position: center;
 }
 
 .container {
@@ -183,7 +185,8 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Patria';
+    src: url("https://framework-gb.cdn.gob.mx/applications/cms/fonts/Patria_Regular.otf") format("opentype");
 }
 
 body {

@@ -320,9 +320,9 @@ const Register = () => {
                 <h3 className='heading'>Paso 1: Datos Generales</h3>
                 <input className={`inputs ${errors.first_name ? 'input-error' : ''}`} type="text" name="first_name" placeholder='Nombre(s)' value={formData.first_name} onChange={handleChange} />
                 {errors.first_name && <p className="error-text">{errors.first_name}</p>}
-                <input className={`inputs ${errors.first_last_name ? 'input-error' : ''}`} type="text" name="first_last_name" placeholder='Apellido Paterno' value={formData.first_last_name} onChange={handleChange} />
+                <input className={`inputs ${errors.first_last_name ? 'input-error' : ''}`} type="text" name="first_last_name" placeholder='Primer Apellido' value={formData.first_last_name} onChange={handleChange} />
                 {errors.first_last_name && <p className="error-text">{errors.first_last_name}</p>}
-                <input className={`inputs ${errors.second_last_name ? 'input-error' : ''}`} type="text" name="second_last_name" placeholder='Apellido Materno' value={formData.second_last_name} onChange={handleChange} />
+                <input className={`inputs ${errors.second_last_name ? 'input-error' : ''}`} type="text" name="second_last_name" placeholder='Segundo Apellido' value={formData.second_last_name} onChange={handleChange} />
                 {errors.second_last_name && <p className="error-text">{errors.second_last_name}</p>}
                 <input className={`inputs ${errors.curp ? 'input-error' : ''}`} type="text" name="curp" placeholder='CURP (18 caracteres)' value={formData.curp} onChange={handleCURPChange} maxLength="18" style={{ textTransform: 'uppercase' }} />
                 {errors.curp && <p className="error-text">{errors.curp}</p>}

@@ -59,7 +59,7 @@ const HomeUser = () => {
                 <Link className='wrap' to='/contact-list'>
                   
                   <p>
-                    <span><RiContactsFill style={{ fontSize: '3em' }} /></span>
+                    <span><RiContactsFill style={{ fontSize: '1.7em' }} /></span>
                     <span>Contactos</span>
                     
                   </p>
@@ -72,7 +72,7 @@ const HomeUser = () => {
               <Link className='wrap' to='/location-view'>
               <p>
                     <span>
-                <FaLocationDot style={{ fontSize: '3em' }} />
+                <FaLocationDot style={{ fontSize: '1.7em' }} />
                 </span>
                     <span>Lugares</span>
                     
@@ -82,7 +82,7 @@ const HomeUser = () => {
             )}
             {/* {token && (
                 <Link className='login-buttones' to='/help'>
-                  <FaQuestionCircle style={{ fontSize: '3em' }} />
+                  <FaQuestionCircle style={{ fontSize: '1.7em' }} />
                   <p>FAQ</p>
                 </Link>
               )} */}
@@ -92,7 +92,7 @@ const HomeUser = () => {
               <Link className='wrap' to='/freq-asked-questions'>
               <p>
                     <span>
-                <MdTipsAndUpdates style={{ fontSize: '3em' }} />
+                <MdTipsAndUpdates style={{ fontSize: '1.7em' }} />
                 </span>
                     <span>Entérate</span>
                     
@@ -107,7 +107,7 @@ const HomeUser = () => {
               <Link className='wrap' to='/chatbot'>
               <p>
                     <span>
-                <TbMessageChatbotFilled style={{ fontSize: '3em' }} />
+                <TbMessageChatbotFilled style={{ fontSize: '1.7em' }} />
                 </span>
                     <span>Chatbot</span>
                     
@@ -115,34 +115,34 @@ const HomeUser = () => {
               </Link>
               </button>
             )}
-            {token && (
+            {/* {token && (
                             <button className='buttonPearl'>
 
               <Link className='wrap' to='/complaint'>
               <p>
                     <span>
-                <BsChatSquareTextFill style={{ fontSize: '3em' }} />
+                <BsChatSquareTextFill style={{ fontSize: '1.7em' }} />
                 </span>
                     <span>Denuncia</span>
                     
                   </p>
               </Link>
               </button>
-            )}
-            {token && (
+            )} */}
+            {/* {token && (
                             <button className='buttonPearl'>
 
               <Link className='wrap' to='/adopt'>
               <p>
                     <span>
-                <PiPawPrintFill style={{ fontSize: '3em' }} />
+                <PiPawPrintFill style={{ fontSize: '1.7em' }} />
                 </span>
                     <span>Adopta</span>
                     
                   </p>
               </Link>
               </button>
-            )}
+            )} */}
 
 
           </div>
