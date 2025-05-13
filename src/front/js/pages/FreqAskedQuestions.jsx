@@ -1,51 +1,45 @@
 import { Link } from 'react-router-dom';
-
+import descarga from '../../img/descarga.webp'; // Ajusta el path
+import pension from '../../img/pension.png'; // Ajusta el path
+import linea from '../../img/079.jpg'; // Ajusta el path
+import abogadas from '../../img/abogadas.png'; // Ajusta el path
 import React, { useState } from 'react';
 import "../../styles/home.css";
 import { FaInfo } from "react-icons/fa";
 
 const faqs = [
-  { question: "Transporte", answer: "Datos sobre rutas de camiones y sitios de taxi seguros." },
+  { question: "Cartilla de Derechos de las Mujeres", answer: 
+    <a href="https://www.cartilladerechosdelasmujeres.gob.mx/pdf/Cartilla_de_Derechos_de_las_Mujeres.pdf" target="_blank" rel="noopener noreferrer">
+      <img src={descarga} style={{width:"100%"}}/>
+      </a>
+   },
   { 
-    question: "Números de emergencia", 
+    question: "Linea de las Mujeres",
     answer: (
       <>
-        Cruz Verde<br />
-        Teléfono: 8283-0112, 8243-4669<br />
-        Dirección: Júarez Poniente s/n, entre Hidalgo y Dra. Kena Moreno, Col. La Cruz, García, N.L., C.P. 66008<br /><br />
-
-        Bomberos<br />
-        Teléfono: 8342-0053/54/55<br />
-        Dirección: Boulevard Heberto Castillo Km. 13.290, García, N.L. 66000<br /><br />
-
-        Clínica municipal<br />
-        Teléfono: 8283-0112<br /><br />
-
-        Policía y Tránsito<br />
-        Teléfono: 8124-5000 Exts. 149/151, 5515-1815, 5515-1816 Emergencias<br />
-        Dirección: Edificio CECOP - Centro de Comando de Op. Policiales, Blvd. Heberto Castillo No. 2000, Col. Hacienda del Sol, García, N.L. 66000<br /><br />
-
-        Servicios Públicos<br />
-        Teléfono: 4737-4080/84<br />
-        Dirección: Parque Deportivo y Recreativo Ejército Mexicano, Col. Valle de San José, García, N.L. 66004<br /><br />
-
-        Cruz Roja<br />
-        Teléfono: 065<br />
-        Dirección: Ave. Maravilla y Ciprés S/N, Col. Los Nogales 2º Sector, García, Nuevo León, CP 66216<br /><br />
-
-        Protección Civil<br />
-        Teléfono: 8283-0241<br />
-        Dirección: Blvd. Heberto Castillo No. 2000, Colonia Hacienda del Sol, García, Nuevo León<br />
+        <a href="tel:079">
+        <img src={linea} style={{width:"100%"}}/>
+        </a>
       </>
     )
   },
-  { question: "Programas de Gobierno", answer: "Programas y requisitos." },
-  { 
-    question: "Links", 
-    answer: <a href="https://www.gob.mx/mujeres" target="_blank" rel="noopener noreferrer">https://www.gob.mx/mujeres</a> 
-  },
-  { question: "Novedades", answer: "Servicios que actualmente están disponibles como albercas o pistas de hielo." },
-  { question: "Otros", answer: <>Puedes consultar nuestro <Link to="/chatbot">Chatbot</Link>.</> },
+  { question: "Pension Mujeres Bienestar", answer: 
+    <a href="https://programasparaelbienestar.gob.mx/pension-mujeres-bienestar/" target="_blank" rel="noopener noreferrer">
+      <img src={pension} style={{width:"100%"}}/>
+      </a>
+   },
+   { question: "Abogadas de las Mujeres", answer: 
+    <>
+    <h3>Convocatoria</h3>
+    <a href="https://www.abogadas.mujeres.gob.mx/PROPUESTA_CONVOCATORIA_ABOGADAS_DE_LAS_MUJERES_vf_22_abril_2025.pdf" target="_blank" rel="noopener noreferrer">
+      <img src={abogadas} style={{width:"100%"}}/>
+      </a>
+      </>
+   },
+   { question: "Mujeres en la Historia", answer: 
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/8YENtBhCpGI?si=EhVcGkhsMFKfAMwC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   }
+  
 ];
 
 const FreqAskedQuestions = () => {
