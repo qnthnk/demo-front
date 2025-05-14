@@ -132,6 +132,10 @@ const Login = () => {
             <span>
               <Link className='forgot-password' style={{ fontSize: 'x-large', color: "rgb(130, 23, 156)" }} to="/signup">Regístrate</Link>
             </span>
+            <span>
+              <Link className='forgot-password' style={{ fontSize: 'x-large', color: "rgb(130, 23, 156)" }} to="/ocr">OCR</Link>
+            </span>
+
           </div>
         </form>
       </div>

@@ -32,6 +32,7 @@ import Complaint from "./pages/Complaint.jsx";
 import Adopt from "./pages/Adopt.jsx";
 import Expediente from "./pages/Expediente.jsx";
 import MapIne from "./pages/MapIne.jsx";
+import OCRDesdeCamara from "./pages/OCRDesdeCamara.jsx";
 
 const Layout = () => {
     const [token, setToken] = useState(localStorage.getItem("token"));
@@ -88,6 +89,7 @@ const Layout = () => {
                     <Route path="/embassies" element={<Embassies />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/gadgets" element={<Gadgets />} />
+                    <Route path="/ocr" element={<OCRDesdeCamara />} />
                     <Route path="/chatbot" element={<ChatBot />} />
                     <Route path="/contact-list" element={<ContactList />} />
                     <Route path="/immigration-requirements" element={<ImmigrationRequirements />} />
