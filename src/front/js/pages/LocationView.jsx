@@ -68,7 +68,7 @@ const LocationView = () => {
             <div className='containerH'>
                 <div className="formContact">
 
-                    <div className="inputContact" style={{ width: "90vw", maxHeight: "90vh", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    <div className="inputContact" style={{ width: "90vw", display: "flex", flexDirection: "column", alignItems: "center", overflowY:"auto" }}>
                         <GoogleMap
                             mapContainerStyle={mapContainerStyle}
                             center={
