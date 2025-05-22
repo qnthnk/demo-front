@@ -107,6 +107,36 @@ const Complaint = () => {
             Swal.fire("Hubo un error en el registro. Por favor, inténtalo de nuevo.");
         }
     };
+    useEffect(() => {
+        if (!store.userLocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    actions.setUserLocation({
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    });
+                },
+                (error) => {
+                    if (error.code === error.PERMISSION_DENIED) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Ubicación no permitida",
+                            html: `
+                                Para utilizar la aplicación, permite el acceso a tu ubicación en la configuración del navegador.<br><br>
+                                <a href="https://support.google.com/chrome/answer/142065" target="_blank" style="color:#3085d6; text-decoration:underline;">
+                                    ¿Cómo habilitar la ubicación?
+                                </a>
+                            `,
+                            confirmButtonText: "Entendido",
+                        });
+                    } else {
+                        Swal.fire("Error", "No se pudo obtener tu ubicación.", "error");
+                    }
+                }
+            );
+        }
+    }, []);
+    
 
     useEffect(() => {
         if (!navigator.geolocation) {
@@ -139,6 +169,10 @@ const Complaint = () => {
                 <div className='heroContact'>
                     <form className="formContact" onSubmit={(e) => { 
                         e.preventDefault(); 
+                        if (!complaintData.latitude || !complaintData.longitude) {
+                            Swal.fire("Por favor permite el acceso a tu ubicación para continuar.");
+                            return;
+                        }
                         if (validateForm()) {
                             handleSubmit(); 
                             Swal.fire("¡Gracias!");
@@ -147,6 +181,13 @@ const Complaint = () => {
                         }
                     }}>
                         <h2 className='heading'>Comparte tu experiencia</h2>
+                        <button
+                            className="buttonPearlAdmin"
+                            style={{ width: "180px", height: "40px", borderRadius: "20px", color: 'white', marginTop: "10px" }}
+                            onClick={() => window.location.reload()}
+                        >
+                            Intentar de nuevo
+                        </button>
                         <div style={{ overflowY: "auto", overflowX: "hidden", maxHeight: "50vh", width: "auto", textAlign: "center" }}>
                             <div style={{ marginBottom: "20px" }}>
                                 <select

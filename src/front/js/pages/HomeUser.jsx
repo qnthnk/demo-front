@@ -23,6 +23,8 @@ const HomeUser = () => {
   const [location, setLocation] = useState(null);
   const [error, setError] = useState(null);
 
+  
+
 
   useEffect(() => {
     if (!navigator.geolocation) {

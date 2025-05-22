@@ -21,6 +21,37 @@ const LocationView = () => {
     });
 
     useEffect(() => {
+        if (!store.userLocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    actions.setUserLocation({
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                    });
+                },
+                (error) => {
+                    if (error.code === error.PERMISSION_DENIED) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Ubicación no permitida",
+                            html: `
+                                Para ver lugares cercanos, permite el acceso a tu ubicación en la configuración del navegador.<br><br>
+                                <a href="https://support.google.com/chrome/answer/142065" target="_blank" style="color:#3085d6; text-decoration:underline;">
+                                    ¿Cómo habilitar la ubicación?
+                                </a>
+                            `,
+                            confirmButtonText: "Entendido",
+                        });
+                    } else {
+                        Swal.fire("Error", "No se pudo obtener tu ubicación.", "error");
+                    }
+                }
+            );
+        }
+    }, []);
+    
+
+    useEffect(() => {
         if (selectedType && store.userLocation) {
             actions.fetchNearbyPlaces(selectedType);
             setSelectedPlace(null); // Limpiar ruta al cambiar de tipo
@@ -102,6 +133,16 @@ const LocationView = () => {
                         ))}
                         {directions && <DirectionsRenderer directions={directions} />}
                         <button className="buttonPearl" style={{ width: "150px", height: "40px", borderRadius: "20px", color: 'white' }} onClick={handleCenterUser}> <FaLocationDot style={{ fontSize: '1em' }} />Mi ubicación</button>
+                        {!store.userLocation && (
+    <button
+        className="buttonPearlAdmin"
+        style={{ width: "180px", height: "40px", borderRadius: "20px", color: 'white', marginTop: "10px" }}
+        onClick={() => window.location.reload()}
+    >
+        Intentar de nuevo
+    </button>
+)}
+
                         </GoogleMap>
 
                         {/* Botones de tipo de lugar */}

@@ -10,6 +10,7 @@ const EmergencyButton = () => {
     const [countdown, setCountdown] = useState(5);
     const [geolocationError, setGeolocationError] = useState(null);
     const [isDeviceConnected, setIsDeviceConnected] = useState(false);
+    
 
     const connectPreferredDevice = async () => {
         const preferredDeviceId = localStorage.getItem('preferredDeviceId');
@@ -54,6 +55,7 @@ const EmergencyButton = () => {
             console.error('Error al conectar con el dispositivo preferido:', error);
         }
     };
+    
 
     useEffect(() => {
         connectPreferredDevice();
