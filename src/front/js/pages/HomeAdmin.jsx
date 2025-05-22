@@ -52,7 +52,7 @@ const HomeAdmin = () => {
           <h2 className='headingH'>Inicio</h2>
           <div className='formis'>
 
-            {token && (
+            {/* {token && (
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/admin-console'>
                   <p>
@@ -61,7 +61,7 @@ const HomeAdmin = () => {
                   </p>
                 </Link>
               </button>
-            )}
+            )} */}
             {token && (
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/mapine'>
@@ -83,7 +83,7 @@ const HomeAdmin = () => {
               </button>
             )}
 
-            {token && (
+            {/* {token && (
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/chatbot'>
                   <p>
@@ -92,7 +92,7 @@ const HomeAdmin = () => {
                   </p>
                 </Link>
               </button>
-            )}
+            )} */}
             {token && (
               <button className='buttonPearlAdmin'>
                 <Link className='wrap' to='/expediente'>

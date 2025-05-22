@@ -51,7 +51,7 @@ const ChatBot = () => {
                         />
                         <button className="buttonPearl" style={{ width: "120px", height: "50px", borderRadius: "20px", color: 'white' }} onClick={sendMessage}>Preguntar</button>
                         <h4 className="inputContacts">
-                            <strong style={{ display: "block", textAlign: "center" }}>Versión Demo.<br />La información puede estar desactualizada.</strong>
+                            <strong style={{ display: "block", textAlign: "center" }}>Versión Demo.<br />La información puede estar desactualizada.<br /><br /><br />Powered by chatGPT</strong>
                             <hr />
                             {GPTResponse}
                         </h4>

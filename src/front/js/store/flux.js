@@ -584,21 +584,23 @@ const getState = ({ getStore, getActions, setStore }) => {
                 setStore({ userLocation: { lat, lng } });
             },
 
-            fetchNearbyPlaces: async (type) => {
+            fetchNearbyPlaces: async (textQuery) => {
                 const store = getStore();
+            
                 if (!store.userLocation) {
                     console.error("Ubicación del usuario no disponible");
                     return;
                 }
-
+            
                 try {
                     const apiKey = process.env.GOOGLE_MAPS_API;
+            
                     if (!apiKey) {
                         console.error("Clave API no definida");
                         return;
                     }
-
-                    const response = await fetch("https://places.googleapis.com/v1/places:searchNearby", {
+            
+                    const response = await fetch("https://places.googleapis.com/v1/places:searchText", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -606,34 +608,34 @@ const getState = ({ getStore, getActions, setStore }) => {
                             "X-Goog-FieldMask": "places.displayName,places.formattedAddress,places.location,places.internationalPhoneNumber",
                         },
                         body: JSON.stringify({
-                            includedTypes: [type],
-                            locationRestriction: {
+                            textQuery: textQuery,  // ← Este es el campo correcto
+                            locationBias: {
                                 circle: {
                                     center: {
                                         latitude: store.userLocation.lat,
                                         longitude: store.userLocation.lng,
                                     },
-                                    radius: 30000,
-                                },
+                                    radius: 3000
+                                }
                             },
-                            maxResultCount: 10,
-                        }),
+                            maxResultCount: 10
+                        })
                     });
-
+            
                     const data = await response.json();
                     console.log("Respuesta de la API:", data);
-
+            
                     if (data.places) {
                         setStore({ nearbyPlaces: data.places });
                     } else {
-                        console.warn("No se encontraron lugares", data);
+                        console.warn("No se encontraron lugares para:", textQuery);
                         setStore({ nearbyPlaces: [] });
                     }
                 } catch (error) {
                     console.error("Error al obtener lugares:", error);
                 }
             }
-        },
+        }            
 
     };
 }

@@ -178,30 +178,28 @@ const EmergencyButton = () => {
         Swal.fire({
             title: '¡Alerta enviada!',
             html: `
-                <div className="containerRMCs">
-                    <div className="containerHs">
-                        <div style="text-align: left;">
-                            <p>Se notificó a <strong>${contactsNotified} contactos</strong>.</p>
-                            <p><strong>Tu ubicación actual:</strong></p>
-                            <ul>
-                                <li>Latitud: ${latitude}</li>
-                                <li>Longitud: ${longitude}</li>
-                            </ul>
-                            <a href="https://www.google.com/maps?q=${latitude},${longitude}" 
-                               target="_blank" 
-                               style="color: #d33; font-weight: bold; text-decoration: underline;">
-                                Ver en Google Maps
-                            </a>
-                            <p style="margin-top: 15px; font-size: 0.9em; color: #555;">
-                                Los contactos recibieron tus datos médicos importantes.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div className="containerRMCs">
+            <div className="containerHs">
+            <div style="text-align: left;">
+                <p>Se notificó la emergencia a tus contactos</strong>.</p>
+                <p><strong>De ser posible, dirígete a un sitio seguro.</strong></p>
+                
+                <a href="https://www.google.com/maps?q=${latitude},${longitude}" 
+                   target="_blank" 
+                   style="color: #d33; font-weight: bold; text-decoration: underline;">
+                Ver mi ubicación en Google Maps
+                </a>
+            </div>
+            </div>
+            </div>
             `,
             icon: 'success',
-            confirmButtonText: 'Entendido',
-            confirmButtonColor: '#28a745'
+            confirmButtonText: '<i class="fas fa-phone-alt"></i> Presiona para llamar al 911',
+            confirmButtonColor: 'red'
+        }).then((result) => {
+            if (result.isConfirmed) {
+            window.location.href = 'tel:911';
+            }
         });
     };
 

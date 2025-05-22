@@ -100,8 +100,8 @@ const Login = () => {
 
       
 
-      <div>
-        <form className="form" onSubmit={handleSubmit} style={{ textAlign: 'center', marginTop: '12%' }}>
+      <div style={{marginTop: '-120px'}}>
+        <form className="form" onSubmit={handleSubmit} style={{ textAlign: 'center', height:'150px' }}>
           <input
             placeholder="Correo electrónico"
             id="email"
@@ -122,7 +122,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <div className="loginNew" style={{ marginTop: "-20px" }}>
+          <div className="loginNew" style={{ marginTop: "-30px" }}>
             <button type="submit">Ingresar</button>
           </div>
           <div style={{ marginTop: '10%', textAlign: 'center' }}>
@@ -132,9 +132,9 @@ const Login = () => {
             <span>
               <Link className='forgot-password' style={{ fontSize: 'x-large', color: "rgb(130, 23, 156)" }} to="/signup">Regístrate</Link>
             </span>
-            <span>
+            {/* <span>
               <Link className='forgot-password' style={{ fontSize: 'x-large', color: "rgb(130, 23, 156)" }} to="/ocr">OCR</Link>
-            </span>
+            </span> */}
 
           </div>
         </form>

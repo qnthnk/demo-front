@@ -198,7 +198,7 @@ const ViewContact = () => {
                             </div>
                         ))
                     ) : (
-                        <p className="heading" style={{ fontSize: "110%" }}>No tienes contactos. Por favor, regístralos.</p>
+                        <p className="heading" style={{ fontSize: "110%" }}>No tienes contactos. Por favor, regístralos para que puedas utilizar el servicio del Botón de Emergencia.</p>
                     )}
                     </form>
                 </div>
