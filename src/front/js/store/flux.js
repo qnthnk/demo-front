@@ -250,8 +250,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
                     // ✅ SweetAlert según el rol
                     Swal.fire({
-                        title: '¡Bienvenido!',
-                        text: userRole === 'admin' ? 'Has ingresado como administrador.' : 'Has ingresado como usuario.',
+                        title: '¡Bienvenida a Tejedoras de la Patria!',
                         icon: 'success',
                         confirmButtonText: 'Continuar'
                     });

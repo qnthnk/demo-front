@@ -37,8 +37,8 @@ const ChatBot = () => {
             <div className="containerHs">
                 <div className="heroContact">
                     {error && <p className="error">{error}</p>}
-                    <label className="formContact" style={{maxWidth:"80vw", minWidth:"50vw", height:"auto"}}>
-                    <h2 className="heading">Chatbot</h2>
+                    <label className="formContact" style={{ maxWidth: "80vw", minWidth: "50vw", height: "auto" }}>
+                        <h2 className="heading">Chatbot</h2>
 
                         <input
                             type="text"
@@ -50,7 +50,7 @@ const ChatBot = () => {
                             onChange={(e) => setMessage(e.target.value)}
                         />
                         <button className="buttonPearl" style={{ width: "120px", height: "50px", borderRadius: "20px", color: 'white' }} onClick={sendMessage}>Preguntar</button>
-                        <h4 className="inputContacts">
+                        <h4 className="inputContacts" style={{ maxHeight: "300px", overflowY: "auto" }}>
                             <strong style={{ display: "block", textAlign: "center" }}>Versión Demo.<br />La información puede estar desactualizada.<br /><br /><br />Powered by chatGPT</strong>
                             <hr />
                             {GPTResponse}

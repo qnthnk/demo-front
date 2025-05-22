@@ -81,7 +81,7 @@ const LocationView = () => {
                                 mapRef.current = map;
                             }}
                         >
-                        </GoogleMap>
+                        
 
                         {store.userLocation && <Marker position={store.userLocation} />}
                         {store.nearbyPlaces?.map((place, index) => (
@@ -102,6 +102,7 @@ const LocationView = () => {
                         ))}
                         {directions && <DirectionsRenderer directions={directions} />}
                         <button className="buttonPearl" style={{ width: "150px", height: "40px", borderRadius: "20px", color: 'white' }} onClick={handleCenterUser}> <FaLocationDot style={{ fontSize: '1em' }} />Mi ubicación</button>
+                        </GoogleMap>
 
                         {/* Botones de tipo de lugar */}
                         <div style={{ display: "flex", justifyContent: "center", marginTop: "10px", width: "80vw", gap: "10px", flexWrap: "wrap" }}>

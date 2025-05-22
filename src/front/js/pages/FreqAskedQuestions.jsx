@@ -13,14 +13,14 @@ const faqs = [
    },
   { question: "Cartilla de Derechos de las Mujeres", answer: 
     <a href="https://www.cartilladerechosdelasmujeres.gob.mx/pdf/Cartilla_de_Derechos_de_las_Mujeres.pdf" target="_blank" rel="noopener noreferrer">
-      <img src={descarga} style={{width:"100%"}}/>
+      <strong>Haz click para descargar</strong><img src={descarga} style={{width:"100%"}}/>
       </a>
    },
   { 
     question: "Linea de las Mujeres",
     answer: (
       <>
-        <a href="tel:079">
+        <a href="tel:079"><strong>Haz click para llamar</strong>
         <img src={linea} style={{width:"100%"}}/>
         </a>
       </>
@@ -28,21 +28,39 @@ const faqs = [
   },
   { question: "Pension Mujeres Bienestar", answer: 
     <a href="https://programasparaelbienestar.gob.mx/pension-mujeres-bienestar/" target="_blank" rel="noopener noreferrer">
-      <img src={pension} style={{width:"100%"}}/>
+      <strong>Haz click</strong><img src={pension} style={{width:"100%"}}/>
       </a>
    },
    { question: "Abogadas de las Mujeres", answer: 
     <>
     <h3>Convocatoria</h3>
     <a href="https://www.abogadas.mujeres.gob.mx/PROPUESTA_CONVOCATORIA_ABOGADAS_DE_LAS_MUJERES_vf_22_abril_2025.pdf" target="_blank" rel="noopener noreferrer">
-      <img src={abogadas} style={{width:"100%"}}/>
+    <strong>Haz click</strong><img src={abogadas} style={{width:"100%"}}/>
       </a>
       </>
    },
    { question: "Mujeres en la Historia", answer: 
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/8YENtBhCpGI?si=EhVcGkhsMFKfAMwC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   },
+   { question: "Síguenos en nuestras redes", answer: 
+    <div>
+              <a href="https://www.youtube.com/@mujeresgobmx" target="_blank" rel="noopener noreferrer">
+        <img src="https://tejedorasdelapatria.mujeres.gob.mx/images/inicio/YouTube.png" alt="Facebook" style={{ height: "25px", marginRight: "15px" }} />
+        </a>
+        <a href="https://www.facebook.com/mujeresgobmx?mibextid=wwXIfr&rdid=WzGimod3vaIMgGYc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CKfXjo3P7%2F%3Fmibextid%3DwwXIfr#" target="_blank" rel="noopener noreferrer">
+          <img src="https://tejedorasdelapatria.mujeres.gob.mx/images/inicio/Facebook.png" alt="Facebook" style={{ height: "25px", marginRight: "15px" }} />
+        </a>
+        <a href="https://www.instagram.com/mujeresgobmx/?igsh=dTB5Y2NkOWl0emNl#" target="_blank" rel="noopener noreferrer">
+        <img src="https://tejedorasdelapatria.mujeres.gob.mx/images/inicio/Instagram.png" alt="Facebook" style={{ height: "25px", marginRight: "15px" }} />
+        </a>
+        <a href="https://www.tiktok.com/@mujeresgobmx?_t=ZM-8vjXdBjyRz4&_r=1" target="_blank" rel="noopener noreferrer">
+        <img src="https://tejedorasdelapatria.mujeres.gob.mx/images/inicio/Tik_Tok.png" alt="Facebook" style={{ height:"25px", marginRight: "15px" }} />
+        </a>
+        <a href="https://x.com/mujeresgobmx?s=21&t=QTmq6tEM-g4imvmuNX9zSQ" target="_blank" rel="noopener noreferrer">
+        <img src="https://tejedorasdelapatria.mujeres.gob.mx/images/inicio/X.png" alt="Facebook" style={{ height: "25px", marginRight: "15px" }} />
+        </a>
+        </div>
    }
-  
 ];
 
 const FreqAskedQuestions = () => {

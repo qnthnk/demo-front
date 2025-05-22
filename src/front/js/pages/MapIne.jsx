@@ -215,6 +215,7 @@ const handleConfirmDownload = () => {
                             value={ambito}
                             onChange={handleAmbitoChange}
                             className="inputContact"
+                            
                         >
                             <option value="">Seleccionar Ámbito</option>
                             <option value="fed">Federal</option>
@@ -228,9 +229,13 @@ const handleConfirmDownload = () => {
                         <select
                             value={selectedEntidad}
                             onChange={handleEntidadChange}
-                            className="inputContact"                        >
+                            className="inputContact"               disabled={!ambito}          >
                             <option value="">Seleccionar Entidad</option>
-                            <option value="NUEVO LEON">Nuevo León</option>
+                            {entidades.map((entidad) => (
+                                <option key={entidad} value={entidad}>
+                                    {`${entidad}`}
+                                </option>
+                            ))}
                         </select>
                     </div>
                     <br />

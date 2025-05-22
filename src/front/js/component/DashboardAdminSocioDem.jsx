@@ -49,18 +49,6 @@ const faqs = [
                         borderWidth: 1,
                     }
                 ]
-            },
-            {
-                labels: ['Hombres', 'Mujeres'],
-                datasets: [
-                    {
-                        label: 'Género',
-                        data: [48, 52],
-                        backgroundColor: 'rgba(180, 206, 33, 0.69)',
-                        borderColor: 'rgb(11, 11, 11)',
-                        borderWidth: 1,
-                    }
-                ]
             }
         ]
     },
@@ -154,7 +142,7 @@ const faqs = [
                 labels: ['Zona Norte', 'Zona Sur', 'Zona Centro'],
                 datasets: [
                     {
-                        label: 'Zonas de García',
+                        label: 'Zonas del país',
                         data: [20, 15, 25],
                         backgroundColor: 'rgba(180, 206, 33, 0.69)',
                         borderColor: 'rgb(11, 11, 11)',
@@ -163,7 +151,7 @@ const faqs = [
                 ]
             },
             {
-                labels: ['García', 'Monterrey', 'San Nicolás'],
+                labels: ['Toluca', 'Monterrey', 'Guadalajara'],
                 datasets: [
                     {
                         label: 'Municipios',
