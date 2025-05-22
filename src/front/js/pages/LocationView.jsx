@@ -3,6 +3,7 @@ import { GoogleMap, Marker, DirectionsRenderer, useLoadScript } from "@react-goo
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import Swal from "sweetalert2";
+import { FaLocationDot } from "react-icons/fa6";
 
 const libraries = ["places"];
 const mapContainerStyle = { width: "100%", height: "350px" };
@@ -66,6 +67,7 @@ const LocationView = () => {
         <div className='containerRMC'>
             <div className='containerH'>
                 <div className="formContact">
+
                     <div className="inputContact" style={{ width: "90vw", maxHeight: "90vh", display: "flex", flexDirection: "column", alignItems: "center" }}>
                         <GoogleMap
                             mapContainerStyle={mapContainerStyle}
@@ -79,33 +81,35 @@ const LocationView = () => {
                                 mapRef.current = map;
                             }}
                         >
-                            {store.userLocation && <Marker position={store.userLocation} />}
-                            {store.nearbyPlaces?.map((place, index) => (
-                                place.location && (
-                                    <Marker
-                                        key={index}
-                                        position={{
-                                            lat: place.location.latitude,
-                                            lng: place.location.longitude,
-                                        }}
-                                        onClick={() =>
-                                            Swal.fire(
-                                                `${place.displayName?.text || "Sin nombre"}\nDirección: ${place.formattedAddress}\nTeléfono: ${place.internationalPhoneNumber || "No disponible"}`
-                                            )
-                                        }
-                                    />
-                                )
-                            ))}
-                            {directions && <DirectionsRenderer directions={directions} />}
                         </GoogleMap>
+
+                        {store.userLocation && <Marker position={store.userLocation} />}
+                        {store.nearbyPlaces?.map((place, index) => (
+                            place.location && (
+                                <Marker
+                                    key={index}
+                                    position={{
+                                        lat: place.location.latitude,
+                                        lng: place.location.longitude,
+                                    }}
+                                    onClick={() =>
+                                        Swal.fire(
+                                            `${place.displayName?.text || "Sin nombre"}\nDirección: ${place.formattedAddress}\nTeléfono: ${place.internationalPhoneNumber || "No disponible"}`
+                                        )
+                                    }
+                                />
+                            )
+                        ))}
+                        {directions && <DirectionsRenderer directions={directions} />}
+                        <button className="buttonPearl" style={{ width: "150px", height: "40px", borderRadius: "20px", color: 'white' }} onClick={handleCenterUser}> <FaLocationDot style={{ fontSize: '1em' }} />Mi ubicación</button>
 
                         {/* Botones de tipo de lugar */}
                         <div style={{ display: "flex", justifyContent: "center", marginTop: "10px", width: "80vw", gap: "10px", flexWrap: "wrap" }}>
-                            <button className="buttonPearl" style={{ width: "120px", height: "50px", borderRadius: "20px", color: 'white' }} onClick={() => setSelectedType("Centro LIBRE para mujeres")}>Centro LIBRE</button>
-                            <button className="buttonPearl" style={{ width: "80px", height: "50px", borderRadius: "20px", color: 'white' }} onClick={() => setSelectedType("police")}>Policía</button>
-                            <button className="buttonPearl" style={{ width: "100px", height: "50px", borderRadius: "20px", color: 'white' }} onClick={() => setSelectedType("hospitals")}>Hospitales</button>
-                            <button className="buttonPearl" style={{ width: "140px", height: "50px", borderRadius: "20px", color: 'white' }} onClick={handleCenterUser}>Ver mi ubicación</button>
+                            <button className="buttonPearl" style={{ width: "100px", height: "50px", borderRadius: "20px", color: 'white' }} onClick={() => setSelectedType("Centro LIBRE para mujeres")}>Centro LIBRE</button>
+                            <button className="buttonPearl" style={{ width: "70px", height: "50px", borderRadius: "20px", color: 'white' }} onClick={() => setSelectedType("police")}>Policía</button>
+                            <button className="buttonPearl" style={{ width: "90px", height: "50px", borderRadius: "20px", color: 'white' }} onClick={() => setSelectedType("hospitals")}>Hospitales</button>
                         </div>
+
                     </div>
 
                     {/* Lista de lugares */}
@@ -137,7 +141,7 @@ const LocationView = () => {
                             ))
                         ) : (
                             <div>
-                                <h5>Presiona un botón para ver lugares cercanos</h5>
+                                <h5>Presiona una opción para ver lugares cercanos</h5>
                                 <h6 style={{color:"red"}}>NOTA: Los Centros LIBRE aun no se encuentran dados de alta en Google. Para este DEMO, inscribimos solo uno de Nuevo León. Para su uso nacional, podemos incluir la gestión del alta de todos los Centros.</h6>
                             </div>
                         )}

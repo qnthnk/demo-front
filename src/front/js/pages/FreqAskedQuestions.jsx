@@ -8,6 +8,9 @@ import "../../styles/home.css";
 import { FaInfo } from "react-icons/fa";
 
 const faqs = [
+  { question: "Comparte tu experiencia", answer: 
+    <Link className='wrap' to='/complaint'><strong>Haz click </strong>y comparte tu experiencia para que llegue a más mujeres como tú</Link>
+   },
   { question: "Cartilla de Derechos de las Mujeres", answer: 
     <a href="https://www.cartilladerechosdelasmujeres.gob.mx/pdf/Cartilla_de_Derechos_de_las_Mujeres.pdf" target="_blank" rel="noopener noreferrer">
       <img src={descarga} style={{width:"100%"}}/>

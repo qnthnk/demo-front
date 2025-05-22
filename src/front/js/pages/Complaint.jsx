@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../store/appContext';
+import { FaCamera } from "react-icons/fa";
 
 const Complaint = () => {
     const { store, actions } = useContext(Context);
@@ -62,15 +63,15 @@ const Complaint = () => {
         const errors = {};
 
         if (!complaintData.cause.trim()) {
-            errors.cause = "El motivo es obligatorio.";
+            errors.cause = "Selecciona una opción.";
         }
 
         if (!complaintData.complaint_comment.trim()) {
-            errors.complaint_comment = "El comentario es obligatorio.";
+            errors.complaint_comment = "Cuéntanos.";
         }
 
         if (!image) {
-            errors.image = "Debe subir una imagen.";
+            errors.image = "Toma una foto.";
         }
 
         setErrors(errors);
@@ -99,7 +100,7 @@ const Complaint = () => {
 
             await actions.complaint(complaintToSend);
             console.log("Formulario enviado:", complaintToSend);
-            Swal.fire("Denuncia enviada con éxito.");
+            Swal.fire("¡Gracias!.");
             navigate('/home');
         } catch (error) {
             console.log("Error en el registro:", error);
@@ -134,71 +135,85 @@ const Complaint = () => {
 
     return (
         <div className='containerRMCs'>
-        <div className='containerHs'>
-          <div className='heroContact'>
-            <form className="formContact">
-              <h2 className='heading'>Denuncia Ciudadana</h2>
-              <div style={{ overflowY: "auto", overflowX:"hidden", maxHeight: "50vh", width:"auto",  textAlign: "center" }}>
-                        <div style={{ marginBottom: "20px" }}>
-                            <select
-                                id="cause"
-                                name="cause"
-                                className='inputContacts'
-                                value={complaintData.cause}
-                                onChange={handleChange}
-                                style={{ width: "55vw", borderRadius: "20px", padding: "10px",display: "flex", justifyContent: "center" }}
-                            >
-                                <option value="">Seleccione el motivo de la denuncia</option>
-                                <option value="Bache">Bache</option>
-                                <option value="Vecino ruidoso">Vecino ruidoso</option>
-                                <option value="Maltrato animal">Maltrato animal</option>
-                                <option value="Alumbrado público">Alumbrado público</option>
-                                <option value="Fuga de agua">Fuga de agua</option>
-                                <option value="Recolección de basura">Recolección de basura</option>
-                                <option value="Acto de corrupción">Acto de corrupción</option>
-                                <option value="Otros">Otros</option>
-
-                            </select>
-                        </div>
-                        <div style={{ marginBottom: "20px" }}>
-                            <textarea
-                                id="complaint_comment"
-                                name="complaint_comment"
-                                className='inputContacts'
-                                placeholder='Detalles de la denuncia'
-                                value={complaintData.complaint_comment}
-                                onChange={handleChange}
-                                style={{ width: "55vw", height:"20vh", borderRadius: "20px", padding: "10px",display: "flex", justifyContent: "center" }}
-
-                            />
-                        </div>
-                        <div style={{ textAlign: "center" }}>
-                            <input  type="file" accept="image/*" capture="camera" onChange={handleImageUpload} />
-                            <div style={{ marginTop: "20px" }}>
-                                {image ? (
-                                    <img src={image}
-                                        alt="Uploaded"
-                                        style={{width:"45vw" ,borderRadius:"20px"}}
-                                    />
-                                ) : (
-                                    <div
-                                        style={{
-                                            width: "100%",
-                                            height: "300px",
-                                            border: "1px solid #ccc",
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center",
-                                            backgroundColor: "#f9f9f9"
-                                        }}
-                                    >
-                                        <span style={{ color: "#aaa" }}>Toma una foto desde tu celular</span>
-                                    </div>
-                                )}
+            <div className='containerHs'>
+                <div className='heroContact'>
+                    <form className="formContact" onSubmit={(e) => { 
+                        e.preventDefault(); 
+                        if (validateForm()) {
+                            handleSubmit(); 
+                            Swal.fire("¡Gracias!");
+                        } else {
+                            Swal.fire("Por favor completa todos los campos.");
+                        }
+                    }}>
+                        <h2 className='heading'>Comparte tu experiencia</h2>
+                        <div style={{ overflowY: "auto", overflowX: "hidden", maxHeight: "50vh", width: "auto", textAlign: "center" }}>
+                            <div style={{ marginBottom: "20px" }}>
+                                <select
+                                    id="cause"
+                                    name="cause"
+                                    className='inputContacts'
+                                    value={complaintData.cause}
+                                    onChange={handleChange}
+                                    style={{ width: "75vw", borderRadius: "20px", padding: "10px", display: "flex", justifyContent: "center" }}
+                                >
+                                    <option value="">¿Cuál es tu Motivo?</option>
+                                    <option value="Bache">Mi comunidad</option>
+                                    <option value="Vecino ruidoso">Mi familia</option>
+                                    <option value="Maltrato animal">Mi país</option>
+                                    <option value="Alumbrado público">Todas las mujeres</option>
+                                </select>
+                                {errors.cause && <p style={{ color: "red" }}>{errors.cause}</p>}
                             </div>
+                            <div style={{ marginBottom: "20px" }}>
+                                <textarea
+                                    id="complaint_comment"
+                                    name="complaint_comment"
+                                    className='inputContacts'
+                                    placeholder='Cuéntanos más sobre tu experiencia'
+                                    value={complaintData.complaint_comment}
+                                    onChange={handleChange}
+                                    style={{ width: "75vw", height: "20vh", borderRadius: "20px", padding: "10px", display: "flex", justifyContent: "center" }}
+                                />
+                                {errors.complaint_comment && <p style={{ color: "red" }}>{errors.complaint_comment}</p>}
+                            </div>
+                            <div style={{ textAlign: "center" }}>
+                                <div className='inputContacts' style={{ marginTop: "20px", width: "75vw" }}>
+                                    {image ? (
+                                        <img src={image}
+                                            alt="Uploaded"
+                                            style={{ width: "45vw", borderRadius: "20px" }}
+                                        />
+                                    ) : (
+                                        <div
+                                            style={{
+                                                width: "100%",
+                                                height: "300px",
+                                                border: "none",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                backgroundColor: "#f9f9f9"
+                                            }}
+                                        >
+                                            <label className='heading' htmlFor="fileInput" style={{ display: "block", marginTop: "10px", cursor: "pointer", fontSize: 'x-large' }}>
+                                                Toma una foto<br /><FaCamera style={{ fontSize: '2em' }} />
+                                            </label>
+                                            <input
+                                                id="fileInput"
+                                                type="file"
+                                                accept="image/*"
+                                                capture="camera"
+                                                onChange={handleImageUpload}
+                                                style={{ display: "none" }}
+                                            />
+                                        </div>
+                                    )}
+                                    {errors.image && <p style={{ color: "red" }}>{errors.image}</p>}
+                                </div>
+                            </div>
+                            <button type="submit" className="buttonPearl" style={{ width: "120px", height: "50px", borderRadius: "20px", color: 'white' }}>Enviar</button>
                         </div>
-                        <button type="submit" className="buttonPearl" style={{width:"120px", height:"50px", borderRadius:"20px", color:'white'}} onClick={handleSubmit}>Enviar</button>
-                    </div>
                     </form>
                 </div>
             </div>

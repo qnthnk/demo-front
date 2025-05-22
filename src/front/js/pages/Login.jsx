@@ -127,10 +127,10 @@ const Login = () => {
           </div>
           <div style={{ marginTop: '10%', textAlign: 'center' }}>
             <span>
-              <Link style={{ color: "rgb(130, 23, 156)" }} className='forgot-password' to="/forgot-password">Olvidé mi contraseña</Link>
+              <Link style={{ color: "rgb(130, 23, 156)" }} className='forgot-password' to="/login">Olvidé mi contraseña</Link>
             </span>
             <span>
-              <Link className='forgot-password' style={{ fontSize: 'x-large', color: "rgb(130, 23, 156)" }} to="/signup">Regístrate</Link>
+              <Link className='forgot-password' style={{ fontSize: 'x-large', color: "rgb(130, 23, 156)" }} to="/login">Regístrate</Link>
             </span>
             {/* <span>
               <Link className='forgot-password' style={{ fontSize: 'x-large', color: "rgb(130, 23, 156)" }} to="/ocr">OCR</Link>

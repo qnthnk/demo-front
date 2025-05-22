@@ -116,7 +116,7 @@ const HomeUser = () => {
               </button>
             )}
             {/* {token && (
-                            <button className='buttonPearl'>
+                            <button className='buttonPearl' style={{ width: "150px", height: "100px", borderRadius: "20px", color: 'white' }}>
 
               <Link className='wrap' to='/complaint'>
               <p>
@@ -127,8 +127,8 @@ const HomeUser = () => {
                     
                   </p>
               </Link>
-              </button>
-            )} */}
+              </button> */}
+         
             {/* {token && (
                             <button className='buttonPearl'>
 
