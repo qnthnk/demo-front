@@ -66,7 +66,19 @@ const AddContact = () => {
         <div>
             <div className="heroContact" style={{backgroundColor: "rgb(255, 255, 255)", backdropFilter: "blur(15px)"}}>
 
-            <form className='formContact' onSubmit={handleAdd}>
+            <form className='formContact' onSubmit={(event) => {
+                handleAdd(event);
+                if (validateForm()) {
+                    import('sweetalert2').then(Swal => {
+                        Swal.default.fire({
+                            icon: 'success',
+                            title: 'Contacto agregado',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    });
+                }
+            }}>
 
                     <input
                         type="text"
