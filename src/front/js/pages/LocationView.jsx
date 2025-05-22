@@ -143,7 +143,7 @@ const LocationView = () => {
                         ) : (
                             <div>
                                 <h5>Presiona una opción para ver lugares cercanos</h5>
-                                <h6 style={{color:"red"}}>NOTA: Los Centros LIBRE aun no se encuentran dados de alta en Google. Para este DEMO, inscribimos solo uno de Nuevo León. Para su uso nacional, podemos incluir la gestión del alta de todos los Centros.</h6>
+                                <h6 style={{color:"red"}}>NOTA: Los Centros LIBRE aun no se encuentran dados de alta en Google. Para fines del DEMO, inscribimos solo uno de Nuevo León.</h6>
                             </div>
                         )}
                     </div>
